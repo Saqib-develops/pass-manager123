@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { useState } from 'react'
 import { useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import { Edit, Trash2 } from 'lucide-react'
 import "react-toastify/dist/ReactToastify.css";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -179,23 +180,21 @@ const Manager = () => {
                     </td>
                     <td className='text-center py-2 border border-white'><div className='flex justify-center items-center gap-2'>{item.username}<img className='invert cursor-pointer left-0 w-6' onClick={() => { copyItem(item.username) }} src="src/assets/copy.svg" alt="" /></div></td>
                     <td className='text-center py-2 border border-white'><div className='flex justify-center items-center gap-2'>{item.password}<img className='invert cursor-pointer left-0 w-6' onClick={() => { copyItem(item.password) }} src="src/assets/copy.svg" alt="" /></div></td>
-                    <td className='text-center py-2 border border-white flex items-center justify-center gap-4 hover:cursor-pointer'>
-                      <span>
-                        <lord-icon
-                          onClick={() => editPassword(item.id)}
-                          src="https://cdn.lordicon.com/exymduqj.json"
-                          trigger="hover"
-                          stroke="bold"
-                          state="hover-line">
-                        </lord-icon>
-                      </span>
-                      <span><lord-icon
-                        onClick={() => deletePassword(item.id)}
-                        src="https://cdn.lordicon.com/hwjcdycb.json"
-                        trigger="hover"
-                        stroke="bold">
-                      </lord-icon>
-                      </span>
+                   <td className="text-center py-2 border border-white flex items-center justify-center gap-4 hover:cursor-pointer">
+                     <span className="flex items-center justify-center gap-4">
+                        <Edit 
+                            onClick={() => editPassword(item.id)}
+                            className="cursor-pointer hover:text-green-600 transition-colors" 
+                            size={22}
+                            strokeWidth={2}
+                        />
+                       <Trash2 
+                            onClick={() => deletePassword(item.id)}
+                            className="cursor-pointer hover:text-red-600 transition-colors" 
+                            size={22}
+                            strokeWidth={2}
+                       />
+                     </span>
                     </td>
 
                   </tr>
