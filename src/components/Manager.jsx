@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { useState } from 'react'
 import { useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import { Edit, Trash2 } from 'lucide-react'
 import "react-toastify/dist/ReactToastify.css";
 import { v4 as uuidv4 } from 'uuid';
 
